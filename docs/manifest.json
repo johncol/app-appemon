@@ -19,8 +19,8 @@
       "type": "image/png"
     },
     {
-      "src": "assets/icons/icon_215x215.png",
-      "sizes": "215x215",
+      "src": "assets/icons/icon_512x512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],
