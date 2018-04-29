@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Pokemon } from '../../../domain/pokemon.model';
 
 @Component({
@@ -8,6 +8,7 @@ import { Pokemon } from '../../../domain/pokemon.model';
 })
 export class PokemonListComponent implements OnInit {
   @Input() pokemons: Pokemon[]= [];
+  @Output() onRemove: EventEmitter<Pokemon> = new EventEmitter();
 
   constructor() { }
 

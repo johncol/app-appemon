@@ -1,21 +1,24 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Pokemon } from '../../domain/pokemon.model';
 import { PokemonApiService } from '../../services/pokemon-api.service';
+import { PokemonSearchingService } from '../../services/pokemon-searching.service';
+import { AbstractPokemonListComponent } from '../abstract-pokemon-list.component';
 
 @Component({
   selector: 'appemon-pokemon-searching',
   templateUrl: './pokemon-searching.component.html',
   styleUrls: ['./pokemon-searching.component.scss']
 })
-export class PokemonSearchingComponent implements OnInit {
-  ids: number[] = [272, 346, 348, 373, 376];
+export class PokemonSearchingComponent extends AbstractPokemonListComponent implements OnInit {
   searchingPokemons: Pokemon[] = [];
 
-  constructor(private pokemonApi: PokemonApiService) { }
+  constructor(pokemonService: PokemonSearchingService, pokemonApi: PokemonApiService) {
+    super(pokemonService, pokemonApi);
+  }
 
-  ngOnInit() {
-    this.pokemonApi.getByIds(this.ids)
-      .subscribe(pokemons => this.searchingPokemons = pokemons);
+  saveResponse(pokemons: Pokemon[]): void {
+    this.searchingPokemons = pokemons;
   }
 
 }

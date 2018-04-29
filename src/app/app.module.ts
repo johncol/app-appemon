@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
+import { StorageServiceModule } from 'angular-webstorage-service';
 
 import { environment } from '../environments/environment';
 
@@ -21,6 +22,9 @@ import { PokemonSearchingComponent } from './components/pokemon-searching/pokemo
 import { MediaQueryService } from './services/media-query.service';
 import { PokemonApiService } from './services/pokemon-api.service';
 import { PokemonMapper } from './services/pokemon.mapper';
+import { PokemonStorageService } from './services/pokemon-storage.service';
+import { PokemonMissingService } from './services/pokemon-missing.service';
+import { PokemonSearchingService } from './services/pokemon-searching.service';
 
 @NgModule({
   imports: [
@@ -29,7 +33,8 @@ import { PokemonMapper } from './services/pokemon.mapper';
     AppRoutingModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    StorageServiceModule
   ],
   declarations: [
     AppComponent,
@@ -42,7 +47,14 @@ import { PokemonMapper } from './services/pokemon.mapper';
     PokemonMissingComponent,
     PokemonSearchingComponent
   ],
-  providers: [MediaQueryService, PokemonApiService, PokemonMapper],
+  providers: [
+    MediaQueryService,
+    PokemonApiService,
+    PokemonMapper,
+    PokemonMissingService,
+    PokemonSearchingService,
+    PokemonStorageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

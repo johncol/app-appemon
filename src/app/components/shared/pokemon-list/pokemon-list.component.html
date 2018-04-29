@@ -1,3 +1,4 @@
 <section class="pokemon-list-item" *ngFor="let pokemon of pokemons">
-  <appemon-pokemon-list-item [pokemon]="pokemon"></appemon-pokemon-list-item>
+  <appemon-pokemon-list-item [pokemon]="pokemon" (onRemove)="onRemove.emit($event)">
+  </appemon-pokemon-list-item>
 </section>

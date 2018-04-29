@@ -9,7 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon-pokemon.ico"
       ],
       "index": "index.html",
       "main": "main.ts",

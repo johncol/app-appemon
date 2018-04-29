@@ -3,6 +3,9 @@ $card-padding: 10px;
 
 .mat-card {
   padding: $card-padding;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .mat-card-header {
