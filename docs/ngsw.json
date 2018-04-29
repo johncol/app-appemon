@@ -1,17 +1,18 @@
 {
   "configVersion": 1,
-  "index": "/index.html",
+  "index": "/appemon/index.html",
   "assetGroups": [
     {
-      "name": "app",
+      "name": "appemon",
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "/index.html",
-        "/inline.318b50c57b4eba3d437b.bundle.js",
-        "/main.bda9a69c787124abfaac.bundle.js",
-        "/polyfills.b6b2cd0d4c472ac3ac12.bundle.js",
-        "/styles.a6dfc3fe196585042d92.bundle.css"
+        "/appemon/favicon.ico",
+        "/appemon/index.html",
+        "/appemon/inline.318b50c57b4eba3d437b.bundle.js",
+        "/appemon/main.bda9a69c787124abfaac.bundle.js",
+        "/appemon/polyfills.b6b2cd0d4c472ac3ac12.bundle.js",
+        "/appemon/styles.a6dfc3fe196585042d92.bundle.css"
       ],
       "patterns": []
     },
@@ -25,10 +26,11 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/inline.318b50c57b4eba3d437b.bundle.js": "998c6060446975e566fd17509558ddc68d72eec3",
-    "/main.bda9a69c787124abfaac.bundle.js": "1b3e62b974295dfba12db4dfd8a50ece01a8f00a",
-    "/polyfills.b6b2cd0d4c472ac3ac12.bundle.js": "b092f5c27ff4222179ae3e9e3164c8cc6caa09cf",
-    "/styles.a6dfc3fe196585042d92.bundle.css": "2c65f25bd89104cab661ed963415726949be18b6",
-    "/index.html": "b99f3bef4f14b81a1db8d333ff4b93dcdeeb1072"
+    "/appemon/inline.318b50c57b4eba3d437b.bundle.js": "998c6060446975e566fd17509558ddc68d72eec3",
+    "/appemon/main.bda9a69c787124abfaac.bundle.js": "1b3e62b974295dfba12db4dfd8a50ece01a8f00a",
+    "/appemon/polyfills.b6b2cd0d4c472ac3ac12.bundle.js": "b092f5c27ff4222179ae3e9e3164c8cc6caa09cf",
+    "/appemon/styles.a6dfc3fe196585042d92.bundle.css": "2c65f25bd89104cab661ed963415726949be18b6",
+    "/appemon/favicon.ico": "1979f5a4be41954366429effe167aef8b717d04a",
+    "/appemon/index.html": "e77932350202747a4ed83930e2340ec034df8c53"
   }
 }
