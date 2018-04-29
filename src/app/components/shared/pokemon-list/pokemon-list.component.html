@@ -1,4 +1,10 @@
-<section class="pokemon-list-item" *ngFor="let pokemon of pokemons">
+<section>
+  <mat-form-field>
+    <input matInput placeholder="Filter by name" #filterField>
+  </mat-form-field>
+</section>
+
+<section class="pokemon-list-item" *ngFor="let pokemon of pokemons | filterByName:filterField.value">
   <appemon-pokemon-list-item [pokemon]="pokemon" (onRemove)="onRemove.emit($event)">
   </appemon-pokemon-list-item>
 </section>

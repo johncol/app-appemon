@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
@@ -27,11 +28,13 @@ import { PokemonStorageService } from './services/pokemon-storage.service';
 import { PokemonMissingService } from './services/pokemon-missing.service';
 import { PokemonSearchingService } from './services/pokemon-searching.service';
 import { PokemonNotReleasedYetService } from './services/pokemon-not-released-yet.service';
+import { PokemonNameFilterPipe } from './pipes/pokemon-name-filter.pipe';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     MaterialModule,
@@ -48,7 +51,8 @@ import { PokemonNotReleasedYetService } from './services/pokemon-not-released-ye
     PokemonListItemComponent,
     PokemonMissingComponent,
     PokemonSearchingComponent,
-    PokemonNotReleasedYetComponent
+    PokemonNotReleasedYetComponent,
+    PokemonNameFilterPipe
   ],
   providers: [
     MediaQueryService,
