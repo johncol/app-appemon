@@ -1,5 +1,7 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { NavigationItem } from './navigation-item.model';
 
 @Component({
   selector: 'appemon-navigation',
@@ -8,15 +10,20 @@ import { Router } from '@angular/router';
 })
 export class NavigationComponent implements OnInit {
   @Output() onLinkClicked: EventEmitter<any> = new EventEmitter();
+  items: NavigationItem[];
 
   constructor(private router: Router) { }
 
   ngOnInit() {
+    this.initilizeNavigationItems();
   }
 
-  goTo(route: string[]): void {
-    this.router.navigate(route);
-    this.onLinkClicked.emit(route);
+  private initilizeNavigationItems(): void {
+    this.items = [
+      NavigationItem.of('Missing', ['/missing']),
+      NavigationItem.of('Searching', ['/searching']),
+      NavigationItem.of('Not released yet', ['/not-released-yet'])
+    ];
   }
 
 }

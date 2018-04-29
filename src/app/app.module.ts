@@ -18,6 +18,7 @@ import { PokemonListComponent } from './components/shared/pokemon-list/pokemon-l
 import { PokemonListItemComponent } from './components/shared/pokemon-list-item/pokemon-list-item.component';
 import { PokemonMissingComponent } from './components/pokemon-missing/pokemon-missing.component';
 import { PokemonSearchingComponent } from './components/pokemon-searching/pokemon-searching.component';
+import { PokemonNotReleasedYetComponent } from './components/pokemon-not-released-yet/pokemon-not-released-yet.component';
 
 import { MediaQueryService } from './services/media-query.service';
 import { PokemonApiService } from './services/pokemon-api.service';
@@ -25,6 +26,7 @@ import { PokemonMapper } from './services/pokemon.mapper';
 import { PokemonStorageService } from './services/pokemon-storage.service';
 import { PokemonMissingService } from './services/pokemon-missing.service';
 import { PokemonSearchingService } from './services/pokemon-searching.service';
+import { PokemonNotReleasedYetService } from './services/pokemon-not-released-yet.service';
 
 @NgModule({
   imports: [
@@ -45,15 +47,17 @@ import { PokemonSearchingService } from './services/pokemon-searching.service';
     PokemonListComponent,
     PokemonListItemComponent,
     PokemonMissingComponent,
-    PokemonSearchingComponent
+    PokemonSearchingComponent,
+    PokemonNotReleasedYetComponent
   ],
   providers: [
     MediaQueryService,
     PokemonApiService,
     PokemonMapper,
+    PokemonStorageService,
     PokemonMissingService,
     PokemonSearchingService,
-    PokemonStorageService
+    PokemonNotReleasedYetService,
   ],
   bootstrap: [AppComponent]
 })

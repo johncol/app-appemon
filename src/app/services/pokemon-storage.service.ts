@@ -6,16 +6,19 @@ import { PokemonList } from '../config/pokemon-list';
 interface PokemonListKeys<T> {
   missing: T;
   searching: T;
+  notReleasedYet: T;
 }
 
 const STORAGE_KEY: PokemonListKeys<string> = {
   missing: 'pokemon-missing',
-  searching: 'pokemon-searching'
+  searching: 'pokemon-searching',
+  notReleasedYet: 'pokemon-not-released-yet'
 };
 
 const DEFAULT_LIST: PokemonListKeys<number[]> = {
   missing: [173, 204, 209],
-  searching: [272, 346, 348, 373, 376]
+  searching: [272, 346, 348, 373, 376],
+  notReleasedYet: [235, 251, 290, 291, 292, 327, 352, 366, 367, 368, 377, 378, 379, 385, 386]
 };
 
 @Injectable()
@@ -33,12 +36,20 @@ export class PokemonStorageService {
     return this.storage.get(STORAGE_KEY.searching);
   }
 
+  notReleasedYet(): number[] {
+    return this.storage.get(STORAGE_KEY.notReleasedYet);
+  }
+
   saveMissing(ids: number[]): void {
     this.storage.set(STORAGE_KEY.missing, ids);
   }
 
   saveSearching(ids: number[]): void {
     this.storage.set(STORAGE_KEY.searching, ids);
+  }
+
+  saveNotReleasedYet(ids: number[]): void {
+    this.storage.set(STORAGE_KEY.notReleasedYet, ids);
   }
 
   private initLists(): void {
