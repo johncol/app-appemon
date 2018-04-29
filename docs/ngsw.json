@@ -1,17 +1,17 @@
 {
   "configVersion": 1,
-  "index": "/appemon/index.html",
+  "index": "/index.html",
   "assetGroups": [
     {
       "name": "app",
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "/appemon/index.html",
-        "/appemon/inline.318b50c57b4eba3d437b.bundle.js",
-        "/appemon/main.e98ecbaf209be106c2d7.bundle.js",
-        "/appemon/polyfills.b6b2cd0d4c472ac3ac12.bundle.js",
-        "/appemon/styles.a6dfc3fe196585042d92.bundle.css"
+        "/index.html",
+        "/inline.318b50c57b4eba3d437b.bundle.js",
+        "/main.a8c9fdaa96100b26287e.bundle.js",
+        "/polyfills.b6b2cd0d4c472ac3ac12.bundle.js",
+        "/styles.a6dfc3fe196585042d92.bundle.css"
       ],
       "patterns": []
     },
@@ -25,10 +25,10 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/appemon/inline.318b50c57b4eba3d437b.bundle.js": "998c6060446975e566fd17509558ddc68d72eec3",
-    "/appemon/main.e98ecbaf209be106c2d7.bundle.js": "3b8c85d609eab1b74c8b3fc039e398a10a611f2e",
-    "/appemon/polyfills.b6b2cd0d4c472ac3ac12.bundle.js": "b092f5c27ff4222179ae3e9e3164c8cc6caa09cf",
-    "/appemon/styles.a6dfc3fe196585042d92.bundle.css": "2c65f25bd89104cab661ed963415726949be18b6",
-    "/appemon/index.html": "f840711ec32ab57b4c8f42ef9908b32699995113"
+    "/inline.318b50c57b4eba3d437b.bundle.js": "998c6060446975e566fd17509558ddc68d72eec3",
+    "/main.a8c9fdaa96100b26287e.bundle.js": "dbeacf8951850552c27e344369bad55a55eb3034",
+    "/polyfills.b6b2cd0d4c472ac3ac12.bundle.js": "b092f5c27ff4222179ae3e9e3164c8cc6caa09cf",
+    "/styles.a6dfc3fe196585042d92.bundle.css": "2c65f25bd89104cab661ed963415726949be18b6",
+    "/index.html": "e4d2293a37d28f7e6c03b8e4161100872b0eff8f"
   }
 }

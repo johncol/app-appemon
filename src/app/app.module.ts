@@ -33,7 +33,7 @@ import { PokemonNotReleasedYetService } from './services/pokemon-not-released-ye
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     MaterialModule,
     FlexLayoutModule,
     StorageServiceModule
