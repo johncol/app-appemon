@@ -6,7 +6,7 @@ import { PokemonSearchingComponent } from './components/pokemon-searching/pokemo
 import { PokemonNotReleasedYetComponent } from './components/pokemon-not-released-yet/pokemon-not-released-yet.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'missing', pathMatch: 'full' },
+  { path: '', component: PokemonMissingComponent },
   { path: 'missing', component: PokemonMissingComponent },
   { path: 'searching', component: PokemonSearchingComponent },
   { path: 'not-released-yet', component: PokemonNotReleasedYetComponent },
