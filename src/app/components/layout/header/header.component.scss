@@ -1,0 +1,11 @@
+$header-height: 56px;
+
+mat-toolbar {
+  padding-left: 0;
+
+  button {
+    height: $header-height;
+    width: $header-height;
+    margin-right: 1em;
+  }
+}

@@ -1,0 +1,18 @@
+<mat-drawer-container class="appemon-container" autosize>
+
+  <mat-drawer #drawer
+    [mode]="isSmallScreen ? 'over' : 'side'"
+    [opened]="isSmallScreen ? false : true"
+    class="mat-elevation-z10 appemon-sidenav"
+  >
+    <appemon-navigation (onLinkClicked)="isSmallScreen && drawer.toggle()"></appemon-navigation>
+  </mat-drawer>
+
+  <div class="appemon-sidenav-content">
+    <appemon-header (onMenuToggle)="drawer.toggle()"></appemon-header>
+    <main class="appemon-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+</mat-drawer-container>

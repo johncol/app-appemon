@@ -1,0 +1,56 @@
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/fromPromise';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
+
+import * as Pokedex from 'pokeapi-js-wrapper';
+
+import { PokemonMapper } from './pokemon.mapper';
+import { Pokemon } from '../domain/pokemon.model';
+import { PokemonResource } from '../api/pokemon.resource';
+
+const pokemonApiHttpOptions: any = {
+  protocol: 'https',
+  versionPath: '/api/v2/',
+  cache: true
+}
+
+@Injectable()
+export class PokemonApiService {
+  private api: any;
+  private resourcePath: string = '/api/v2/pokemon/';
+  
+  constructor(private mapper: PokemonMapper) {
+    this.api = new Pokedex.Pokedex(pokemonApiHttpOptions);
+  }
+
+  getById(id: number): Observable<Pokemon> {
+    return this.requestOnePokemonUsing(id);
+  }
+
+  getByName(name: string): Observable<Pokemon> {
+    return this.requestOnePokemonUsing(name);
+  }
+
+  getByIds(ids: number[]): Observable<Pokemon[]> {
+    return this.requestPokemonUsing(ids);
+  }
+
+  getByNames(names: string[]): Observable<Pokemon[]> {
+    return this.requestPokemonUsing(names);
+  }
+
+  private requestOnePokemonUsing(identifier: any): Observable<Pokemon> {
+    return this.requestPokemonUsing([identifier])
+      .map(pokemons => pokemons[0]);
+  }
+
+  private requestPokemonUsing(identifiers: any[]): Observable<Pokemon[]> {
+    const resources: string[] = identifiers.map(identifier => this.resourcePath + identifier);
+    return Observable.fromPromise(this.api.resource(resources))
+      .do(resource => console.log('resource:', resource))
+      .map(resource => this.mapper.mapAll(<PokemonResource[]>resource));
+  }
+
+}
