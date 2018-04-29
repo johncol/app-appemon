@@ -28,28 +28,12 @@ export class PokemonStorageService {
     this.initLists();
   }
 
-  missing(): number[] {
-    return this.storage.get(STORAGE_KEY.missing);
+  get(pokemonList: string): number[] {
+    return this.storage.get(STORAGE_KEY[pokemonList]);
   }
 
-  searching(): number[] {
-    return this.storage.get(STORAGE_KEY.searching);
-  }
-
-  notReleasedYet(): number[] {
-    return this.storage.get(STORAGE_KEY.notReleasedYet);
-  }
-
-  saveMissing(ids: number[]): void {
-    this.storage.set(STORAGE_KEY.missing, ids);
-  }
-
-  saveSearching(ids: number[]): void {
-    this.storage.set(STORAGE_KEY.searching, ids);
-  }
-
-  saveNotReleasedYet(ids: number[]): void {
-    this.storage.set(STORAGE_KEY.notReleasedYet, ids);
+  save(pokemonList: string, ids: number[]): void {
+    this.storage.set(STORAGE_KEY[pokemonList], ids);
   }
 
   private initLists(): void {

@@ -2,20 +2,17 @@ import { Injectable } from '@angular/core';
 
 import { PokemonStorageService } from './pokemon-storage.service';
 import { PokemonListService } from './pokemon-list.service';
+import { PokemonList } from '../config/pokemon-list';
 
 @Injectable()
 export class PokemonSearchingService extends PokemonListService {
 
-  constructor(private storage: PokemonStorageService) {
-    super();
+  constructor(storage: PokemonStorageService) {
+    super(storage);
   }
 
-  protected getFromStorage(): number[] {
-    return this.storage.searching();
-  }
-
-  protected saveInStorage(): void {
-    this.storage.saveSearching(this.pokemonIds);
+  protected getListKey(): string {
+    return PokemonList.searching;
   }
 
 }

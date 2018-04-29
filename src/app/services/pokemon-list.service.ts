@@ -1,14 +1,15 @@
 import { Subject } from 'rxjs/Subject';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Subscription } from 'rxjs/Subscription';
+import { PokemonStorageService } from './pokemon-storage.service';
 
 export abstract class PokemonListService {
   private _pokemonIds: number[];
   private _pokemonsSubject: Subject<number[]>;
 
-  protected abstract getFromStorage(): number[];
+  protected abstract getListKey(): string;
 
-  protected abstract saveInStorage(): void;
+  constructor(private storage: PokemonStorageService) {}
 
   add(pokemonId: number): void {
     if (!this._pokemonIds.includes(pokemonId)) {
@@ -47,6 +48,14 @@ export abstract class PokemonListService {
     listOperation();
     this.saveInStorage();
     this._pokemonsSubject.next(this.pokemonIds);
+  }
+
+  private getFromStorage(): number[] {
+    return this.storage.get(this.getListKey());
+  }
+
+  private saveInStorage(): void {
+    this.storage.save(this.getListKey(), this.pokemonIds);
   }
 
 }
