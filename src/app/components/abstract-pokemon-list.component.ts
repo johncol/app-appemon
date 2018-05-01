@@ -6,19 +6,18 @@ import { PokemonApiService } from '../services/pokemon-api.service';
 import { PokemonListService } from '../services/pokemon-list.service';
 
 export abstract class AbstractPokemonListComponent implements OnInit {
+  pokemonList: Pokemon[] = [];
 
   constructor(
     private pokemonService: PokemonListService,
     private pokemonApi: PokemonApiService
   ) { }
 
-  abstract saveResponse(pokemons: Pokemon[]): void;
-
   ngOnInit() {
     this.pokemonService.pokemonsSubject
       .concatMap(ids => this.pokemonApi.getByIds(ids))
       .map(pokemons => pokemons.sort((pokemon1, pokemon2) => pokemon1.id < pokemon2.id ? -1 : 1))
-      .subscribe(pokemons => this.saveResponse(pokemons));
+      .subscribe(pokemons => this.pokemonList.push(...pokemons));
   }
 
   add(pokemon: Pokemon): void {
