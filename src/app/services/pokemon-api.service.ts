@@ -49,7 +49,6 @@ export class PokemonApiService {
   private requestPokemonUsing(identifiers: any[]): Observable<Pokemon[]> {
     const resources: string[] = identifiers.map(identifier => this.resourcePath + identifier);
     return Observable.fromPromise(this.api.resource(resources))
-      .do(resource => console.log('resource:', resource))
       .map(resource => this.mapper.mapAll(<PokemonResource[]>resource));
   }
 
