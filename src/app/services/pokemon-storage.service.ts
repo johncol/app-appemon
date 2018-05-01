@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { LOCAL_STORAGE, StorageService } from 'angular-webstorage-service';
 
+import { environment } from '../../environments/environment';
 import { PokemonList } from '../config/pokemon-list';
 
 interface PokemonListKeys<T> {
@@ -43,7 +44,7 @@ export class PokemonStorageService {
 
   private initSingleListIfEmptyWith(key: string, defaultList: number[]): void {
     const storageList: number[] = this.storage.get(key);
-    if (storageList == null) {
+    if (storageList == null || environment.resetStorage) {
       this.storage.set(key, defaultList);
     }
   }

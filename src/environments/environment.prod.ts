@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  path: 'appemon'
+  path: 'appemon',
+  resetStorage: false
 };
