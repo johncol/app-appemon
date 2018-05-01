@@ -1,0 +1,52 @@
+{
+  "configVersion": 1,
+  "index": "/appemon/index.html",
+  "assetGroups": [
+    {
+      "name": "appemon",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/appemon/favicon.ico",
+        "/appemon/index.html",
+        "/appemon/inline.318b50c57b4eba3d437b.bundle.js",
+        "/appemon/main.cf559c8292c40c8ca5b3.bundle.js",
+        "/appemon/polyfills.b6b2cd0d4c472ac3ac12.bundle.js",
+        "/appemon/styles.0dcc7279aabb79b81ab6.bundle.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/appemon/assets/icons/icon_128x128.png",
+        "/appemon/assets/icons/icon_256x256.png",
+        "/appemon/assets/icons/icon_512x512.png",
+        "/appemon/assets/icons/icon_64x64.png",
+        "/appemon/assets/styles/_loader.scss",
+        "/appemon/assets/styles/_vars.scss"
+      ],
+      "patterns": [
+        "https:\\/\\/fonts\\.googleapis\\.com\\/.*",
+        "https:\\/\\/raw\\.githubusercontent\\.com\\/PokeAPI\\/sprites\\/.*"
+      ]
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/appemon/inline.318b50c57b4eba3d437b.bundle.js": "998c6060446975e566fd17509558ddc68d72eec3",
+    "/appemon/assets/icons/icon_128x128.png": "6c5896490b08031447b35cc2f32617fd88f5e4fb",
+    "/appemon/main.cf559c8292c40c8ca5b3.bundle.js": "a6835379c5f43b481fef1b131729b4c5eacbf16d",
+    "/appemon/assets/icons/icon_256x256.png": "7ca07f7a9af38072c73546c4342c9dab5c3b6a60",
+    "/appemon/polyfills.b6b2cd0d4c472ac3ac12.bundle.js": "b092f5c27ff4222179ae3e9e3164c8cc6caa09cf",
+    "/appemon/assets/icons/icon_512x512.png": "af1702ab4b48e10f603469b5b2b99f3111a4404e",
+    "/appemon/styles.0dcc7279aabb79b81ab6.bundle.css": "7bb89637f07f20aa9ecb1d750008e081acdae5a2",
+    "/appemon/assets/icons/icon_64x64.png": "ead0133938d3b339520ce11363eb669c76e1d532",
+    "/appemon/favicon.ico": "1979f5a4be41954366429effe167aef8b717d04a",
+    "/appemon/assets/styles/_loader.scss": "ab5ae0c50f45ff4c4a699150a1f340672838e9e3",
+    "/appemon/index.html": "28d7feee638a5a7bc188b59d6098a9693c675f8d",
+    "/appemon/assets/styles/_vars.scss": "227ef2de71b1351092abd4b3a961362a160e076b"
+  }
+}
