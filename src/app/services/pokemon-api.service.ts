@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
+import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/from';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/observable/interval';
@@ -57,6 +58,9 @@ export class PokemonApiService {
   }
 
   private requestPokemonUsing(identifiers: any[]): Observable<Pokemon[]> {
+    if (!identifiers || identifiers.length === 0) {
+      return Observable.of([]);
+    }
     const resources: string[] = identifiers.map(identifier => this.resourcePath + identifier);
     return Observable.fromPromise(this.api.resource(resources))
       .map(resource => this.mapper.mapAll(<PokemonResource[]>resource));

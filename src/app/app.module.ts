@@ -30,6 +30,7 @@ import { PokemonMissingService } from './services/pokemon-missing.service';
 import { PokemonSearchingService } from './services/pokemon-searching.service';
 import { PokemonNotReleasedYetService } from './services/pokemon-not-released-yet.service';
 import { PokemonNameFilterPipe } from './pipes/pokemon-name-filter.pipe';
+import { NotificationComponent } from './components/shared/notification/notification.component';
 
 @NgModule({
   imports: [
@@ -54,7 +55,8 @@ import { PokemonNameFilterPipe } from './pipes/pokemon-name-filter.pipe';
     PokemonMissingComponent,
     PokemonSearchingComponent,
     PokemonNotReleasedYetComponent,
-    PokemonNameFilterPipe
+    PokemonNameFilterPipe,
+    NotificationComponent
   ],
   providers: [
     MediaQueryService,
