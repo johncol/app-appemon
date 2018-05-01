@@ -5,3 +5,12 @@
 .pokemon-list-item {
   margin-bottom: 10px;
 }
+
+.pokemon-list-container {
+  height: calc(100vh - 175px);
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}

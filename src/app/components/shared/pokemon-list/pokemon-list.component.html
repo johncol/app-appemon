@@ -4,7 +4,9 @@
   </mat-form-field>
 </section>
 
-<section class="pokemon-list-item" *ngFor="let pokemon of pokemons | filterByName:filterField.value">
-  <appemon-pokemon-list-item [pokemon]="pokemon" (onRemove)="removePokemon($event)">
-  </appemon-pokemon-list-item>
-</section>
+<div class="pokemon-list-container" snInfiniteScroll (scrollEnd)="addMorePokemon()" [offset]="200">
+  <section class="pokemon-list-item" *ngFor="let pokemon of pokemons | filterByName:filterField.value">
+    <appemon-pokemon-list-item [pokemon]="pokemon" (onRemove)="removePokemon($event)">
+    </appemon-pokemon-list-item>
+  </section>
+</div>

@@ -28,4 +28,13 @@ export class PokemonListComponent implements OnInit {
       .onUndo(() => this.onUndoRemove.emit(pokemon));
   }
 
+  addMorePokemon(): void {
+    this.pokemons = [
+      ...this.pokemons,
+      this.pokemons[0],
+      this.pokemons[1],
+      this.pokemons[2],
+    ];
+  }
+
 }
