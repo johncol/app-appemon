@@ -1,5 +1,4 @@
-<loaders-css *ngIf="!pokemons" loader="line-spin-fade-loader" loaderClass="data-loader">
-</loaders-css>
+<appemon-spinner *ngIf="!pokemons"></appemon-spinner>
 
 <appemon-notification *ngIf="pokemons && pokemons.length === 0">
   No pokemons have been added to this list

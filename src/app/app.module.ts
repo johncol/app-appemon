@@ -6,7 +6,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
 import { StorageServiceModule } from 'angular-webstorage-service';
-import { LoadersCssModule } from 'angular2-loaders-css';
 
 import { environment } from '../environments/environment';
 
@@ -31,6 +30,7 @@ import { PokemonSearchingService } from './services/pokemon-searching.service';
 import { PokemonNotReleasedYetService } from './services/pokemon-not-released-yet.service';
 import { PokemonNameFilterPipe } from './pipes/pokemon-name-filter.pipe';
 import { NotificationComponent } from './components/shared/notification/notification.component';
+import { SpinnerComponent } from './components/shared/spinner/spinner.component';
 
 @NgModule({
   imports: [
@@ -41,8 +41,7 @@ import { NotificationComponent } from './components/shared/notification/notifica
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     MaterialModule,
     FlexLayoutModule,
-    StorageServiceModule,
-    LoadersCssModule
+    StorageServiceModule
   ],
   declarations: [
     AppComponent,
@@ -56,7 +55,8 @@ import { NotificationComponent } from './components/shared/notification/notifica
     PokemonSearchingComponent,
     PokemonNotReleasedYetComponent,
     PokemonNameFilterPipe,
-    NotificationComponent
+    NotificationComponent,
+    SpinnerComponent
   ],
   providers: [
     MediaQueryService,
