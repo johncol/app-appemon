@@ -17,7 +17,7 @@ export abstract class AbstractPokemonListComponent implements OnInit {
     this.pokemonService.pokemonsSubject
       .concatMap(ids => this.pokemonApi.getByIds(ids))
       .map(pokemons => pokemons.sort((pokemon1, pokemon2) => pokemon1.id < pokemon2.id ? -1 : 1))
-      .subscribe(pokemons => this.pokemonList.push(...pokemons));
+      .subscribe(pokemons => this.pokemonList = pokemons);
   }
 
   add(pokemon: Pokemon): void {
