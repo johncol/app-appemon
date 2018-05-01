@@ -6,6 +6,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
 import { StorageServiceModule } from 'angular-webstorage-service';
+import { LoadersCssModule } from 'angular2-loaders-css';
 
 import { environment } from '../environments/environment';
 
@@ -39,7 +40,8 @@ import { PokemonNameFilterPipe } from './pipes/pokemon-name-filter.pipe';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     MaterialModule,
     FlexLayoutModule,
-    StorageServiceModule
+    StorageServiceModule,
+    LoadersCssModule
   ],
   declarations: [
     AppComponent,

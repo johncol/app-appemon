@@ -4,6 +4,9 @@
   </mat-form-field>
 </section>
 
+<loaders-css loader="line-spin-fade-loader" loaderClass="data-loader" *ngIf="!pokemons || pokemons.length == 0">
+</loaders-css>
+
 <section class="pokemon-list-item" *ngFor="let pokemon of pokemons | filterByName:filterField.value">
   <appemon-pokemon-list-item [pokemon]="pokemon" (onRemove)="removePokemon($event)">
   </appemon-pokemon-list-item>
