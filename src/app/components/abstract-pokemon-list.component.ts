@@ -6,7 +6,7 @@ import { PokemonApiService } from '../services/pokemon-api.service';
 import { PokemonListService } from '../services/pokemon-list.service';
 
 export abstract class AbstractPokemonListComponent implements OnInit {
-  pokemonList: Pokemon[] = [];
+  pokemonList: Pokemon[];
 
   constructor(
     private pokemonService: PokemonListService,

@@ -10,7 +10,7 @@ import { PokemonListSnackBarService } from './services/pokemon-list-snack-bar.se
   providers: [PokemonListSnackBarService]
 })
 export class PokemonListComponent implements OnInit {
-  @Input() pokemons: Pokemon[]= [];
+  @Input() pokemons: Pokemon[];
   @Output() onRemove: EventEmitter<Pokemon> = new EventEmitter();
   @Output() onUndoRemove: EventEmitter<Pokemon> = new EventEmitter();
 
