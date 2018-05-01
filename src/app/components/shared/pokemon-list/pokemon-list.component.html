@@ -1,13 +1,18 @@
-<section>
-  <mat-form-field>
-    <input matInput placeholder="Filter by name" #filterField>
-  </mat-form-field>
-</section>
+<appemon-spinner *ngIf="!pokemons"></appemon-spinner>
 
-<loaders-css loader="line-spin-fade-loader" loaderClass="data-loader" *ngIf="!pokemons || pokemons.length == 0">
-</loaders-css>
+<appemon-notification *ngIf="pokemons && pokemons.length === 0">
+  No pokemons have been added to this list
+</appemon-notification>
 
-<section class="pokemon-list-item" *ngFor="let pokemon of pokemons | filterByName:filterField.value">
-  <appemon-pokemon-list-item [pokemon]="pokemon" (onRemove)="removePokemon($event)">
-  </appemon-pokemon-list-item>
-</section>
+<div *ngIf="pokemons && pokemons.length !== 0">
+  <section>
+    <mat-form-field>
+      <input matInput placeholder="Filter by name" #filterField>
+    </mat-form-field>
+  </section>
+  
+  <section class="pokemon-list-item" *ngFor="let pokemon of (pokemons || []) | filterByName:filterField.value">
+    <appemon-pokemon-list-item [pokemon]="pokemon" (onRemove)="removePokemon($event)">
+    </appemon-pokemon-list-item>
+  </section>
+</div>
