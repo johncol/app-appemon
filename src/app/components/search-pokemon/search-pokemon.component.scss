@@ -1,0 +1,9 @@
+form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .mat-form-field {
+    width: calc(100% - 100px);
+  }
+}

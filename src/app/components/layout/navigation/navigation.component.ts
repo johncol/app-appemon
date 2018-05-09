@@ -22,7 +22,8 @@ export class NavigationComponent implements OnInit {
     this.items = [
       NavigationItem.of('Missing', ['/missing']),
       NavigationItem.of('Searching', ['/searching']),
-      NavigationItem.of('Not released yet', ['/not-released-yet'])
+      NavigationItem.of('Not released yet', ['/not-released-yet']),
+      NavigationItem.of('Search', ['/search'])
     ];
   }
 

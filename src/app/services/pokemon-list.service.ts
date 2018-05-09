@@ -12,12 +12,14 @@ export abstract class PokemonListService {
   constructor(private storage: PokemonStorageService) {}
 
   add(pokemonId: number): void {
+    this.initStateIfRequired();
     if (!this._pokemonIds.includes(pokemonId)) {
       this.operateOnList(() => this._pokemonIds.push(pokemonId));
     }
   }
 
   remove(pokemonId: number): void {
+    this.initStateIfRequired();
     const index: number = this._pokemonIds.indexOf(pokemonId);
     if (index !== -1) {
       this.operateOnList(() => this._pokemonIds.splice(index, 1));
@@ -29,10 +31,14 @@ export abstract class PokemonListService {
   }
 
   get pokemonsSubject(): Subject<number[]> {
+    this.initStateIfRequired();
+    return this._pokemonsSubject;
+  }
+  
+  private initStateIfRequired(): void {
     if (this.stateHasNotBeenInitialized()) {
       this.initializeState();
     }
-    return this._pokemonsSubject;
   }
 
   private stateHasNotBeenInitialized(): boolean {

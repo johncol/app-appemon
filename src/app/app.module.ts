@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
@@ -20,6 +20,10 @@ import { PokemonListItemComponent } from './components/shared/pokemon-list-item/
 import { PokemonMissingComponent } from './components/pokemon-missing/pokemon-missing.component';
 import { PokemonSearchingComponent } from './components/pokemon-searching/pokemon-searching.component';
 import { PokemonNotReleasedYetComponent } from './components/pokemon-not-released-yet/pokemon-not-released-yet.component';
+import { NotificationComponent } from './components/shared/notification/notification.component';
+import { SpinnerComponent } from './components/shared/spinner/spinner.component';
+import { SearchPokemonComponent } from './components/search-pokemon/search-pokemon.component';
+import { OptionsMenuComponent } from './components/shared/options-menu/options-menu.component';
 
 import { MediaQueryService } from './services/media-query.service';
 import { PokemonApiService } from './services/pokemon-api.service';
@@ -28,15 +32,15 @@ import { PokemonStorageService } from './services/pokemon-storage.service';
 import { PokemonMissingService } from './services/pokemon-missing.service';
 import { PokemonSearchingService } from './services/pokemon-searching.service';
 import { PokemonNotReleasedYetService } from './services/pokemon-not-released-yet.service';
+import { OptionsMenuService } from './components/shared/options-menu/services/options-menu.services';
 import { PokemonNameFilterPipe } from './pipes/pokemon-name-filter.pipe';
-import { NotificationComponent } from './components/shared/notification/notification.component';
-import { SpinnerComponent } from './components/shared/spinner/spinner.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     MaterialModule,
@@ -56,7 +60,9 @@ import { SpinnerComponent } from './components/shared/spinner/spinner.component'
     PokemonNotReleasedYetComponent,
     PokemonNameFilterPipe,
     NotificationComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    SearchPokemonComponent,
+    OptionsMenuComponent
   ],
   providers: [
     MediaQueryService,
@@ -66,6 +72,7 @@ import { SpinnerComponent } from './components/shared/spinner/spinner.component'
     PokemonMissingService,
     PokemonSearchingService,
     PokemonNotReleasedYetService,
+    OptionsMenuService
   ],
   bootstrap: [AppComponent]
 })
