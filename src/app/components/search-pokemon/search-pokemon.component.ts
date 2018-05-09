@@ -14,6 +14,7 @@ export class SearchPokemonComponent implements OnInit {
   formSubmitted: boolean;
   searchField: AbstractControl;
   searchResult: Pokemon;
+  searching: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -25,9 +26,11 @@ export class SearchPokemonComponent implements OnInit {
   }
 
   search(): void {
+    this.searching = true;
     this.pokemonApi
       .getByName(String(this.searchField.value).trim())
       .do(() => this.formSubmitted = true)
+      .do(() => this.searching = false)
       .subscribe(pokemon => this.searchResult = pokemon);
   }
 

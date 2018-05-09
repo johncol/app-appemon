@@ -2,15 +2,19 @@
   <mat-form-field>
     <input matInput placeholder="Search by name or number" formControlName="name">
   </mat-form-field>
-  <button mat-raised-button color="primary" type="submit" [disabled]="fieldIsEmpty()">Search</button>
+  <button mat-raised-button color="primary" type="submit" [disabled]="fieldIsEmpty() || searching">Search</button>
 </form>
 
-<appemon-notification *ngIf="!searchResult && formSubmitted">
-  No pokemon matched the search criteria
-</appemon-notification>
+<appemon-spinner *ngIf="searching"></appemon-spinner>
 
-<appemon-pokemon-list-item
-  *ngIf="searchResult"
-  [displayOptions]="true"
-  [pokemon]="searchResult">
-</appemon-pokemon-list-item>
+<div *ngIf="!searching">
+  <appemon-notification *ngIf="!searchResult && formSubmitted">
+    No pokemon matched the search criteria
+  </appemon-notification>
+  
+  <appemon-pokemon-list-item
+    *ngIf="searchResult"
+    [displayOptions]="true"
+    [pokemon]="searchResult">
+  </appemon-pokemon-list-item>
+</div>
