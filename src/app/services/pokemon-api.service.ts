@@ -6,6 +6,7 @@ import 'rxjs/add/observable/from';
 import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/observable/interval';
 
+import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/concatMap';
 import 'rxjs/add/operator/do';
@@ -54,7 +55,7 @@ export class PokemonApiService {
 
   private requestOnePokemonUsing(identifier: any): Observable<Pokemon> {
     return this.requestPokemonUsing([identifier])
-      .map(pokemons => pokemons[0]);
+      .map(pokemons => pokemons.length > 0 ? pokemons[0] : null);
   }
 
   private requestPokemonUsing(identifiers: any[]): Observable<Pokemon[]> {
@@ -63,7 +64,8 @@ export class PokemonApiService {
     }
     const resources: string[] = identifiers.map(identifier => this.resourcePath + identifier);
     return Observable.fromPromise(this.api.resource(resources))
-      .map(resource => this.mapper.mapAll(<PokemonResource[]>resource));
+      .map(resource => this.mapper.mapAll(<PokemonResource[]>resource))
+      .catch(error => Observable.of([]));
   }
 
   private requestPokemonUsingChunks(identifiers: any[], byChunksOf: number = DEFAULT_CHUNK_SIZE): Observable<Pokemon[]> {

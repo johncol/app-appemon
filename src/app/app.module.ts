@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialModule } from './material/material.module';
@@ -31,12 +31,14 @@ import { PokemonNotReleasedYetService } from './services/pokemon-not-released-ye
 import { PokemonNameFilterPipe } from './pipes/pokemon-name-filter.pipe';
 import { NotificationComponent } from './components/shared/notification/notification.component';
 import { SpinnerComponent } from './components/shared/spinner/spinner.component';
+import { SearchPokemonComponent } from './components/search-pokemon/search-pokemon.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     MaterialModule,
@@ -56,7 +58,8 @@ import { SpinnerComponent } from './components/shared/spinner/spinner.component'
     PokemonNotReleasedYetComponent,
     PokemonNameFilterPipe,
     NotificationComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    SearchPokemonComponent
   ],
   providers: [
     MediaQueryService,

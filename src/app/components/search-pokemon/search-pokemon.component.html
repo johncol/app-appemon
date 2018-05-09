@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="search()" novalidate autocomplete="off">
+  <mat-form-field>
+    <input matInput placeholder="Search by name or number" formControlName="name">
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" [disabled]="fieldIsEmpty()">Search</button>
+</form>
+
+<appemon-notification *ngIf="!searchResult && formSubmitted">
+  No pokemon matched the search criteria
+</appemon-notification>
+
+<appemon-pokemon-list-item [removeable]="false" *ngIf="searchResult" [pokemon]="searchResult">
+</appemon-pokemon-list-item>

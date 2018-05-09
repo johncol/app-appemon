@@ -8,6 +8,7 @@ import { Pokemon } from '../../../domain/pokemon.model';
 })
 export class PokemonListItemComponent implements OnInit {
   @Input() pokemon: Pokemon;
+  @Input() removeable: boolean = true;
   @Output() onRemove: EventEmitter<Pokemon> = new EventEmitter();
 
   constructor() { }
