@@ -9,5 +9,8 @@
   No pokemon matched the search criteria
 </appemon-notification>
 
-<appemon-pokemon-list-item [removeable]="false" *ngIf="searchResult" [pokemon]="searchResult">
+<appemon-pokemon-list-item
+  *ngIf="searchResult"
+  [displayOptions]="true"
+  [pokemon]="searchResult">
 </appemon-pokemon-list-item>

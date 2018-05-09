@@ -1,0 +1,8 @@
+<section>
+  <button mat-button [matMenuTriggerFor]="menu">Options</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngFor="let option of options" (click)="onClick.emit(option)">
+      <span>{{ option.label }}</span>
+    </button>
+  </mat-menu>
+</section>

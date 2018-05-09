@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon } from '../../domain/pokemon.model';
 import { FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
+
+import { Pokemon } from '../../domain/pokemon.model';
 import { PokemonApiService } from '../../services/pokemon-api.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { PokemonApiService } from '../../services/pokemon-api.service';
 })
 export class SearchPokemonComponent implements OnInit {
   form: FormGroup;
-  formSubmitted: boolean = false;
+  formSubmitted: boolean;
   searchField: AbstractControl;
   searchResult: Pokemon;
 
@@ -35,9 +36,7 @@ export class SearchPokemonComponent implements OnInit {
   }
 
   private initForm(): void {
-    this.form = this.formBuilder.group({
-      'name': [null]
-    });
+    this.form = this.formBuilder.group({ 'name': [] });
     this.searchField = this.form.get('name');
   }
 

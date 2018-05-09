@@ -1,8 +1,6 @@
 $sprite-size: 60px;
 $card-padding: 10px;
 
-$breakpoint: 720px;
-
 .mat-card {
   padding: $card-padding;
   max-width: 600px;
@@ -34,17 +32,6 @@ $breakpoint: 720px;
 }
 
 .mat-card-actions {
-  .mat-button {
-    width: 100%;
-  }
-
-  @media(min-width: $breakpoint) {
-    display: flex;
-    flex-direction: row-reverse;
-
-    .mat-button {
-      width: auto;
-    }
-  }
+  display: flex;
+  flex-direction: row-reverse;
 }
-
