@@ -20,6 +20,7 @@ import { PokemonListItemComponent } from './components/shared/pokemon-list-item/
 import { PokemonMissingComponent } from './components/pokemon-missing/pokemon-missing.component';
 import { PokemonSearchingComponent } from './components/pokemon-searching/pokemon-searching.component';
 import { PokemonNotReleasedYetComponent } from './components/pokemon-not-released-yet/pokemon-not-released-yet.component';
+import { PokemonMissingGenderComponent } from './components/pokemon-missing-gender/pokemon-missing-gender.component';
 import { NotificationComponent } from './components/shared/notification/notification.component';
 import { SpinnerComponent } from './components/shared/spinner/spinner.component';
 import { SearchPokemonComponent } from './components/search-pokemon/search-pokemon.component';
@@ -32,6 +33,7 @@ import { PokemonStorageService } from './services/pokemon-storage.service';
 import { PokemonMissingService } from './services/pokemon-missing.service';
 import { PokemonSearchingService } from './services/pokemon-searching.service';
 import { PokemonNotReleasedYetService } from './services/pokemon-not-released-yet.service';
+import { PokemonMissingGenderService } from './services/pokemon-missing-gender.service';
 import { OptionsMenuService } from './components/shared/options-menu/services/options-menu.services';
 import { PokemonNameFilterPipe } from './pipes/pokemon-name-filter.pipe';
 
@@ -58,6 +60,7 @@ import { PokemonNameFilterPipe } from './pipes/pokemon-name-filter.pipe';
     PokemonMissingComponent,
     PokemonSearchingComponent,
     PokemonNotReleasedYetComponent,
+    PokemonMissingGenderComponent,
     PokemonNameFilterPipe,
     NotificationComponent,
     SpinnerComponent,
@@ -72,6 +75,7 @@ import { PokemonNameFilterPipe } from './pipes/pokemon-name-filter.pipe';
     PokemonMissingService,
     PokemonSearchingService,
     PokemonNotReleasedYetService,
+    PokemonMissingGenderService,
     OptionsMenuService
   ],
   bootstrap: [AppComponent]

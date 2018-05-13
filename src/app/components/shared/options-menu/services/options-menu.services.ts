@@ -1,9 +1,12 @@
 import { Injectable } from "@angular/core";
+
 import { PokemonMissingService } from "../../../../services/pokemon-missing.service";
 import { PokemonSearchingService } from "../../../../services/pokemon-searching.service";
 import { PokemonNotReleasedYetService } from "../../../../services/pokemon-not-released-yet.service";
+import { PokemonMissingGenderService } from "../../../../services/pokemon-missing-gender.service";
 import { MenuOption } from "../menu-option.model";
 import { Pokemon } from "../../../../domain/pokemon.model";
+import { PokemonListService } from "../../../../services/pokemon-list.service";
 
 @Injectable()
 export class OptionsMenuService {
@@ -12,7 +15,8 @@ export class OptionsMenuService {
   constructor(
     private pokemonMissing: PokemonMissingService,
     private pokemonSearching: PokemonSearchingService,
-    private pokemonNotReleasedYet: PokemonNotReleasedYetService) {
+    private pokemonNotReleasedYet: PokemonNotReleasedYetService,
+    private pokemonMissingGender: PokemonMissingGenderService) {
       this.initDefaultOptions();
   }
 
@@ -22,10 +26,15 @@ export class OptionsMenuService {
 
   private initDefaultOptions(): void {
     this.options = [
-      MenuOption.for('Send to missing', ' sent to missing list', (pokemon: Pokemon) => this.pokemonMissing.add(pokemon.id)),
-      MenuOption.for('Send to searching', ' sent to searching list', (pokemon: Pokemon) => this.pokemonSearching.add(pokemon.id)),
-      MenuOption.for('Send to not released yet', ' sent to not released yet list', (pokemon: Pokemon) => this.pokemonNotReleasedYet.add(pokemon.id))
+      this.buildMenuOptionFor('missing', this.pokemonMissing),
+      this.buildMenuOptionFor('searching', this.pokemonSearching),
+      this.buildMenuOptionFor('not released yet', this.pokemonNotReleasedYet),
+      this.buildMenuOptionFor('missing gender', this.pokemonMissingGender)
     ];
+  }
+
+  private buildMenuOptionFor(list: string, service: PokemonListService): MenuOption {
+    return MenuOption.for(`Send to ${list}`, ` sent to ${list} list`, (pokemon: Pokemon) => service.add(pokemon.id));
   }
 
 }
