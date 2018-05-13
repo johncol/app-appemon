@@ -8,18 +8,21 @@ interface PokemonListKeys<T> {
   missing: T;
   searching: T;
   notReleasedYet: T;
+  missingGender: T;
 }
 
 const STORAGE_KEY: PokemonListKeys<string> = {
   missing: 'pokemon-missing',
   searching: 'pokemon-searching',
-  notReleasedYet: 'pokemon-not-released-yet'
+  notReleasedYet: 'pokemon-not-released-yet',
+  missingGender: 'pokemon-missing-gender'
 };
 
 const DEFAULT_LIST: PokemonListKeys<number[]> = {
   missing: [173, 204, 209],
   searching: [272, 346, 348, 373, 376],
-  notReleasedYet: [235, 251, 290, 291, 292, 327, 352, 366, 367, 368, 377, 378, 379, 385, 386]
+  notReleasedYet: [235, 251, 290, 291, 292, 327, 352, 366, 367, 368, 377, 378, 379, 385, 386],
+  missingGender: []
 };
 
 @Injectable()

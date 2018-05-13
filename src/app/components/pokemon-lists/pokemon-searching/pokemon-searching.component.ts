@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { PokemonApiService } from '../../services/pokemon-api.service';
-import { PokemonSearchingService } from '../../services/pokemon-searching.service';
+import { PokemonApiService } from '../../../services/pokemon-api.service';
+import { PokemonSearchingService } from '../../../services/pokemon-searching.service';
 import { AbstractPokemonListComponent } from '../abstract-pokemon-list.component';
 
 @Component({
-  selector: 'appemon-pokemon-searching',
-  templateUrl: './pokemon-searching.component.html',
-  styleUrls: ['./pokemon-searching.component.scss']
+  templateUrl: './../pokemon-list.component.html'
 })
 export class PokemonSearchingComponent extends AbstractPokemonListComponent implements OnInit {
 

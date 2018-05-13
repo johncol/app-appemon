@@ -50,7 +50,7 @@ export class PokemonApiService {
   }
 
   getByNames(names: string[]): Observable<Pokemon[]> {
-    return this.requestPokemonUsing(names);
+    return this.requestPokemonUsing(names.map(name => name.toLowerCase()));
   }
 
   private requestOnePokemonUsing(identifier: any): Observable<Pokemon> {
