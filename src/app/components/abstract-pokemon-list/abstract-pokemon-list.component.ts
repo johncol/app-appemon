@@ -1,9 +1,9 @@
 import { OnInit } from '@angular/core';
 import 'rxjs/add/operator/concatMap';
 
-import { Pokemon } from '../domain/pokemon.model';
-import { PokemonApiService } from '../services/pokemon-api.service';
-import { PokemonListService } from '../services/pokemon-list.service';
+import { Pokemon } from '../../domain/pokemon.model';
+import { PokemonApiService } from '../../services/pokemon-api.service';
+import { PokemonListService } from '../../services/pokemon-list.service';
 
 export abstract class AbstractPokemonListComponent implements OnInit {
   pokemonList: Pokemon[];
