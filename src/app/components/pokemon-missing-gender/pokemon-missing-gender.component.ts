@@ -5,9 +5,7 @@ import { PokemonMissingGenderService } from '../../services/pokemon-missing-gend
 import { AbstractPokemonListComponent } from '../abstract-pokemon-list.component';
 
 @Component({
-  selector: 'appemon-pokemon-missing-gender',
-  templateUrl: './pokemon-missing-gender.component.html',
-  styleUrls: ['./pokemon-missing-gender.component.scss']
+  templateUrl: './pokemon-missing-gender.component.html'
 })
 export class PokemonMissingGenderComponent extends AbstractPokemonListComponent implements OnInit {
 
