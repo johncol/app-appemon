@@ -42,7 +42,7 @@ export class PokemonApiService {
   }
 
   getByName(name: string): Observable<Pokemon> {
-    return this.requestOnePokemonUsing(name);
+    return this.requestOnePokemonUsing(name.toLowerCase());
   }
 
   getByIds(ids: number[]): Observable<Pokemon[]> {
