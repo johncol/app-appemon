@@ -8,7 +8,7 @@ import { PokemonMissingGenderComponent } from './components/pokemon-lists/pokemo
 import { SearchPokemonComponent } from './components/search-pokemon/search-pokemon.component';
 
 const routes: Routes = [
-  { path: '', component: PokemonMissingComponent },
+  { path: '', component: PokemonSearchingComponent },
   { path: 'missing', component: PokemonMissingComponent },
   { path: 'searching', component: PokemonSearchingComponent },
   { path: 'not-released-yet', component: PokemonNotReleasedYetComponent },
